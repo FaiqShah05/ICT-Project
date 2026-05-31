@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Makes website look good on mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WanderWorld - Travel Website</title>
+
+  <!-- Link to our CSS file -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts: Playfair Display for headings, Lato for body text -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- ===================== NAVIGATION BAR ===================== -->
+  <!-- onclick="showPage('name')" is a JavaScript function that switches pages -->
+  <nav class="navbar">
+    <div class="logo">🌍 WanderWorld</div>
+    <ul class="nav-links">
+      <!-- id="nav-home" is used by JS to highlight the active link -->
+      <li><a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+      <li><a href="#" onclick="showPage('destinations')" id="nav-destinations">Destinations</a></li>
+      <li><a href="#" onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- ===================== END NAVIGATION BAR ===================== -->
+
+
+  <!-- ========================================================== -->
+  <!--                     PAGE 1: HOME                           -->
+  <!-- This div is visible by default (no display:none on it)     -->
+  <!-- ========================================================== -->
+  <div id="home">
+
+    <!-- HERO SECTION: Big banner with background image -->
+    <section class="hero">
+      <!-- Dark overlay makes text readable on the background image -->
+      <div class="hero-overlay"></div>
+      <!-- Text and button on top of the overlay -->
+      <div class="hero-content">
+        <h1>Explore the World</h1>
+        <p>Discover breathtaking destinations and create memories that last a lifetime.</p>
+        <!-- This button switches to the destinations page -->
+        <button class="btn" onclick="showPage('destinations')">Start Exploring</button>
+      </div>
+    </section>
+
+    <!-- FEATURES SECTION: 3 cards -->
+    <section class="features">
+      <h2 class="section-title">Why Travel With Us?</h2>
+
+      <!-- This container uses flexbox to place cards side by side -->
+      <div class="features-container">
+
+        <!-- Feature Card 1 -->
+        <div class="feature-card">
+          <div class="feature-icon">✈️</div>
+          <h3>Easy Booking</h3>
+          <p>Book your dream trip in just a few simple steps with our easy-to-use platform.</p>
+        </div>
+
+        <!-- Feature Card 2 -->
+        <div class="feature-card">
+          <div class="feature-icon">🏨</div>
+          <h3>Best Hotels</h3>
+          <p>We partner with top-rated hotels worldwide to give you a comfortable stay.</p>
+        </div>
+
+        <!-- Feature Card 3 -->
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Safe Travel</h3>
+          <p>Your safety is our priority. We provide 24/7 support throughout your journey.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+  <!-- ========================================================== -->
+  <!--                   END PAGE 1: HOME                         -->
+  <!-- ========================================================== -->
+
+
+  <!-- ========================================================== -->
+  <!--                  PAGE 2: DESTINATIONS                      -->
+  <!-- display:none hides this page until user clicks the nav     -->
+  <!-- ========================================================== -->
+  <div id="destinations" style="display:none;">
+
+    <!-- Small banner at top of the page -->
+    <div class="page-header">
+      <h1>Popular Destinations</h1>
+      <p>Find your next adventure from our top picks</p>
+    </div>
+
+    <!-- Grid of 6 destination cards -->
+    <section class="destinations-section">
+      <div class="destinations-grid">
+
+        <!-- Destination Card 1 -->
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&h=250&fit=crop" alt="Paris" />
+          <div class="card-info">
+            <h3>Paris, France</h3>
+            <p>The city of love, lights, and the iconic Eiffel Tower.</p>
+            <span class="price">From $899</span>
+          </div>
+        </div>
+
+        <!-- Destination Card 2 -->
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&h=250&fit=crop" alt="Tokyo" />
+          <div class="card-info">
+            <h3>Tokyo, Japan</h3>
+            <p>A blend of traditional culture and modern technology.</p>
+            <span class="price">From $1,200</span>
+          </div>
+        </div>
+
+        <!-- Destination Card 3 -->
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1490644658840-3f2e3f8c5625?w=400&h=250&fit=crop" alt="New York" />
+          <div class="card-info">
+            <h3>New York, USA</h3>
+            <p>The city that never sleeps, full of energy and culture.</p>
+            <span class="price">From $750</span>
+          </div>
+        </div>
+
+        <!-- Destination Card 4 -->
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=400&h=250&fit=crop" alt="Maldives" />
+          <div class="card-info">
+            <h3>Maldives</h3>
+            <p>Crystal clear waters and beautiful white sandy beaches.</p>
+            <span class="price">From $1,500</span>
+          </div>
+        </div>
+
+        <!-- Destination Card 5 -->
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=250&fit=crop" alt="Dubai" />
+          <div class="card-info">
+            <h3>Dubai, UAE</h3>
+            <p>Luxury, skyscrapers, and desert adventures await you.</p>
+            <span class="price">From $1,100</span>
+          </div>
+        </div>
+
+        <!-- Destination Card 6 -->
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&h=250&fit=crop" alt="Rome" />
+          <div class="card-info">
+            <h3>Rome, Italy</h3>
+            <p>Walk through history in the eternal city of Rome.</p>
+            <span class="price">From $850</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+  <!-- ========================================================== -->
+  <!--               END PAGE 2: DESTINATIONS                     -->
+  <!-- ========================================================== -->
+
+
+  <!-- ========================================================== -->
+  <!--                   PAGE 3: CONTACT                          -->
+  <!-- display:none hides this page until user clicks the nav     -->
+  <!-- ========================================================== -->
+  <div id="contact" style="display:none;">
+
+    <!-- Small banner at top of the page -->
+    <div class="page-header">
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you. Send us a message!</p>
+    </div>
+
+    <!-- Contact section: form on left, info on right -->
+    <section class="contact-section">
+      <div class="contact-container">
+
+        <!-- LEFT SIDE: Contact Form -->
+        <div class="contact-form">
+          <h2>Send a Message</h2>
+
+          <form action="#" method="POST">
+
+            <!-- Name Input -->
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="Enter your name" />
+            </div>
+
+            <!-- Email Input -->
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" placeholder="Enter your email" />
+            </div>
+
+            <!-- Subject Input -->
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" placeholder="What is this about?" />
+            </div>
+
+            <!-- Message: textarea allows multiple lines -->
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Write your message here..."></textarea>
+            </div>
+
+            <button type="submit" class="btn">Send Message</button>
+
+          </form>
+        </div>
+
+        <!-- RIGHT SIDE: Contact Information -->
+        <div class="contact-info">
+          <h2>Get In Touch</h2>
+
+          <!-- Each info-item = icon + heading + text -->
+          <div class="info-item">
+            <span class="info-icon">📍</span>
+            <div>
+              <h4>Our Office</h4>
+              <p>123 Travel Street, Islamabad, Pakistan</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon">📞</span>
+            <div>
+              <h4>Phone</h4>
+              <p>+92 300 1234567</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon">📧</span>
+            <div>
+              <h4>Email</h4>
+              <p>hello@wanderworld.com</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon">🕐</span>
+            <div>
+              <h4>Working Hours</h4>
+              <p>Mon - Fri: 9am to 6pm</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+  <!-- ========================================================== -->
+  <!--                  END PAGE 3: CONTACT                       -->
+  <!-- ========================================================== -->
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <!-- Footer is outside all page divs so it shows on every page -->
+  <footer class="footer">
+    <p>© 2025 WanderWorld. All rights reserved.</p>
+  </footer>
+  <!-- ===================== END FOOTER ===================== -->
+
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <!-- Simple function to switch between pages -->
+  <script>
+
+    // This function is called when any nav link is clicked
+    // pageName will be 'home', 'destinations', or 'contact'
+    function showPage(pageName) {
+
+      // STEP 1: Hide all 3 page divs
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('destinations').style.display = 'none';
+      document.getElementById('contact').style.display = 'none';
+
+      // STEP 2: Show only the page the user clicked
+      document.getElementById(pageName).style.display = 'block';
+
+      // STEP 3: Remove 'active' highlight from all nav links
+      document.getElementById('nav-home').classList.remove('active');
+      document.getElementById('nav-destinations').classList.remove('active');
+      document.getElementById('nav-contact').classList.remove('active');
+
+      // STEP 4: Add 'active' highlight to the clicked nav link
+      // 'nav-' + pageName builds the id e.g. 'nav-home'
+      document.getElementById('nav-' + pageName).classList.add('active');
+
+      // STEP 5: Scroll to the top of the page
+      window.scrollTo(0, 0);
+    }
+
+  </script>
+  <!-- ===================== END JAVASCRIPT ===================== -->
+
+</body>
+</html>

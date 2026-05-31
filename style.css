@@ -1,0 +1,407 @@
+/* ============================================================
+   WANDERWORLD - TRAVEL WEBSITE STYLESHEET
+   This file styles all 3 pages inside index.html:
+   - Home Page
+   - Destinations Page
+   - Contact Page
+   ============================================================ */
+
+
+/* ===================== GLOBAL RESET ===================== */
+/* Remove default spacing from every element */
+* {
+  margin: 0;
+  padding: 0;
+  /* border and padding are included inside the element's total width */
+  box-sizing: border-box;
+}
+
+/* Base styles for the whole page */
+body {
+  font-family: 'Lato', sans-serif; /* Clean font for all text */
+  background-color: #f9f9f9;       /* Light grey page background */
+  color: #333;                      /* Dark grey text color */
+}
+
+/* Remove underline from all links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove bullet dots from all lists */
+ul {
+  list-style: none;
+}
+/* ===================== END GLOBAL RESET ===================== */
+
+
+/* ===================== NAVIGATION BAR ===================== */
+.navbar {
+  background-color: #1a1a2e;      /* Dark navy blue */
+  display: flex;                   /* Logo and links side by side */
+  justify-content: space-between;  /* Logo left, links right */
+  align-items: center;             /* Vertically centered */
+  padding: 15px 60px;
+  position: sticky;                /* Stays at top when scrolling */
+  top: 0;
+  z-index: 100;                    /* Stays above all other content */
+}
+
+/* Logo text */
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #f5a623;   /* Orange/gold color */
+  font-weight: 700;
+}
+
+/* Container for the 3 nav links - flex makes them sit in a row */
+.nav-links {
+  display: flex;
+  gap: 35px;        /* Space between each link */
+}
+
+/* Individual nav link style */
+.nav-links a {
+  color: #ccc;
+  font-size: 16px;
+  font-weight: 700;
+  transition: color 0.3s;  /* Smooth color change on hover */
+}
+
+/* Link color changes to orange on hover */
+.nav-links a:hover {
+  color:#f5a623;
+}
+
+/* The currently active page link is orange with an underline */
+.nav-links a.active {
+  color: #f5a623;
+  border-bottom: 2px solid #f5a623;
+  padding-bottom: 3px;
+}
+/* ===================== END NAVIGATION BAR ===================== */
+
+
+/* ===================== REUSABLE BUTTON ===================== */
+/* .btn is used on multiple buttons across all pages */
+.btn {
+  display: inline-block;       /* Allows padding to work */
+  background-color: #f5a623;   /* Orange button */
+  color: #1a1a2e;              /* Dark text */
+  padding: 12px 30px;
+  border-radius: 5px;          /* Slightly rounded corners */
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;             /* Shows hand cursor on hover */
+  transition: background-color 0.3s;
+}
+
+/* Button gets darker when hovered */
+.btn:hover {
+  background-color: #e09310;
+}
+/* ===================== END BUTTON ===================== */
+
+
+/* ===================== HOME PAGE - HERO SECTION ===================== */
+/* Big banner at the top of the home page */
+.hero {
+  position: relative;   /* Needed so overlay can sit inside it */
+  height: 90vh;         /* 90% of the browser window height */
+  background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&fit=crop');
+  background-size: cover;       /* Image fills entire section */
+  background-position: center;  /* Centers the image */
+  display: flex;
+  align-items: center;          /* Vertically centers the text */
+  justify-content: center;      /* Horizontally centers the text */
+  text-align: center;
+}
+
+/* Semi-transparent black layer on top of the background image */
+/* This makes white text readable */
+.hero-overlay {
+  position: absolute;  /* Positioned relative to .hero */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);  /* Black at 50% opacity */
+}
+
+/* The text content sits above the overlay */
+.hero-content {
+  position: relative;  /* Makes it appear above the overlay */
+  z-index: 1;
+  color: white;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  line-height: 1.6;   /* Space between lines */
+}
+/* ===================== END HERO SECTION ===================== */
+
+
+/* ===================== HOME PAGE - FEATURES SECTION ===================== */
+.features {
+  padding: 70px 60px;
+  text-align: center;
+}
+
+/* Section title used on Home and Destinations pages */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #1a1a2e;
+}
+
+/* Flex container: places the 3 feature cards side by side */
+.features-container {
+  display: flex;
+  gap: 30px;              /* Space between cards */
+  justify-content: center;
+  flex-wrap: wrap;        /* Cards wrap to next line on small screens */
+}
+
+/* Each white card */
+.feature-card {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);  /* Soft shadow */
+  transition: transform 0.3s;
+}
+
+/* Card moves up slightly when hovered */
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Big emoji icon */
+.feature-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #1a1a2e;
+}
+
+.feature-card p {
+  color: #666;
+  line-height: 1.6;
+}
+/* ===================== END FEATURES SECTION ===================== */
+
+
+/* ===================== PAGE HEADER (Destinations & Contact) ===================== */
+/* Dark banner shown below the navbar on inner pages */
+.page-header {
+  background-color: #1a1a2e;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.page-header p {
+  font-size: 18px;
+  color: #ccc;
+}
+/* ===================== END PAGE HEADER ===================== */
+
+
+/* ===================== DESTINATIONS PAGE ===================== */
+.destinations-section {
+  padding: 60px;
+}
+
+/* CSS Grid: 3 equal columns for destination cards */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 columns, each 1 fraction of space */
+  gap: 30px;
+}
+
+/* Each destination card */
+.destination-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;   /* Hides image edges outside the rounded border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.destination-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Image at the top of each card */
+.destination-card img {
+  width: 100%;        /* Fills full card width */
+  height: 200px;
+  object-fit: cover;  /* Crops image to fit without stretching */
+}
+
+/* Text area below the image */
+.card-info {
+  padding: 20px;
+}
+
+.card-info h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #1a1a2e;
+}
+
+.card-info p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+/* Orange pill-shaped price tag */
+.price {
+  background-color: #f5a623;
+  color: #1a1a2e;
+  padding: 5px 12px;
+  border-radius: 20px;  /* Makes it a pill shape */
+  font-weight: 700;
+  font-size: 14px;
+}
+/* ===================== END DESTINATIONS PAGE ===================== */
+
+
+/* ===================== CONTACT PAGE ===================== */
+.contact-section {
+  padding: 60px;
+}
+
+/* Flex container: form on left, info on right */
+.contact-container {
+  display: flex;
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;   /* Centers the container horizontally */
+}
+
+/* LEFT: White box with the form */
+.contact-form {
+  flex: 1.5;   /* Takes 1.5x more space than the info side */
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #1a1a2e;
+}
+
+/* Wraps each label and input together */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Label above each input */
+.form-group label {
+  display: block;   /* Label takes its own line */
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Input fields and textarea share the same style */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: 'Lato', sans-serif;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+/* Border turns orange when user clicks on an input */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;          /* Removes default browser blue outline */
+  border-color: #f5a623;  /* Orange border */
+}
+
+/* RIGHT: Contact info section */
+.contact-info {
+  flex: 1;
+  padding: 10px 0;
+}
+
+.contact-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #1a1a2e;
+}
+
+/* Row with icon + text */
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.info-icon {
+  font-size: 28px;
+}
+
+.info-item h4 {
+  font-size: 16px;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.info-item p {
+  color: #666;
+  font-size: 15px;
+}
+/* ===================== END CONTACT PAGE ===================== */
+
+
+/* ===================== FOOTER ===================== */
+.footer {
+  background-color: #1a1a2e;
+  color: #aaa;
+  text-align: center;
+  padding: 25px 20px;
+  font-size: 14px;
+  margin-top: 60px;
+}
+/* ===================== END FOOTER ===================== */
